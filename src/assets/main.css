@@ -15,6 +15,11 @@ a,
   transition: 0.4s;
 }
 
+.table th {
+  font-weight: bolder;
+  border-bottom: solid;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

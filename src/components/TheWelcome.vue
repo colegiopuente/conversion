@@ -1,4 +1,5 @@
 <script setup>
+import LevelSimulator from './LevelSimulator.vue'
 import WelcomeItem from './WelcomeItem.vue'
 </script>
 
@@ -33,11 +34,11 @@ import WelcomeItem from './WelcomeItem.vue'
       </tbody>
     </table>
   </WelcomeItem>
-</template>
 
-<style scoped>
-.table th {
-  font-weight: bolder;
-  border-bottom: solid;
-}
-</style>
+  <WelcomeItem>
+    <template #heading>Simulador</template>
+
+    Seleccione el nivel para cada una de las valoraciones:
+    <LevelSimulator />
+  </WelcomeItem>
+</template>
