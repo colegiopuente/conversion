@@ -1,41 +1,26 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { useValuationsStore } from '@/stores/valuations'
 
-const items = ref([])
-
-const itemsCount = computed(() => items.value.filter(i => i.value).length)
-
-const add = () => {
-  items.value.push({
-    value: ''
-  })
-}
-
-const remove = (index) => {
-  items.value.splice(index, 1)
-}
+const store = useValuationsStore()
 </script>
 
 <template>
   <div class="mb mt">
-    <button @click="add">Agregar valoración</button>
+    <button @click="store.add">Agregar valoración</button>
   </div>
 
   <table class="rating">
     <tbody>
-      <tr v-for="(item, index) in items">
+      <tr v-for="(item, index) in store.items">
         <td>Valoración {{ index + 1 }}</td>
         <td>
           <select v-model="item.value">
             <option value="" disabled>--Elija--</option>
-            <option value="1">Bajo</option>
-            <option value="2">Básico</option>
-            <option value="3">Alto</option>
-            <option value="4">Superior</option>
+            <option v-for="level in store.levels" :value="level.value">{{ level.title }}</option>
           </select>
         </td>
         <td>
-          <button @click="remove(index)">Eliminar</button>
+          <button @click="store.remove(index)">Eliminar</button>
         </td>
       </tr>
     </tbody>
@@ -54,7 +39,7 @@ const remove = (index) => {
       </tr>
       <tr>
         <td class="subtitle">Total valoraciones:</td>
-        <td>{{ itemsCount }}</td>
+        <td>{{ store.itemsCount }}</td>
       </tr>
     </tbody>
   </table>

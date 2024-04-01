@@ -1,6 +1,9 @@
 <script setup>
 import LevelSimulator from './LevelSimulator.vue'
 import WelcomeItem from './WelcomeItem.vue'
+import { useValuationsStore } from '@/stores/valuations'
+
+const { levels } = useValuationsStore();
 </script>
 
 <template>
@@ -15,21 +18,9 @@ import WelcomeItem from './WelcomeItem.vue'
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Bj</td>
-          <td>Bajo</td>
-        </tr>
-        <tr>
-          <td>Bs</td>
-          <td>Básico</td>
-        </tr>
-        <tr>
-          <td>A</td>
-          <td>Alto</td>
-        </tr>
-        <tr>
-          <td>S</td>
-          <td>Superior</td>
+        <tr v-for="level in levels">
+          <td>{{ level.abbr }}</td>
+          <td>{{ level.title }}</td>
         </tr>
       </tbody>
     </table>
