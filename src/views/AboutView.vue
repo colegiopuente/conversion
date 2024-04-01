@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h2>En esta página podrá obtener las conversiones entre los distintos niveles de desempeño.</h2>
   </div>
 </template>
 
