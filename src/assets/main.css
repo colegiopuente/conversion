@@ -20,6 +20,18 @@ a,
   border-bottom: solid;
 }
 
+.mb {
+  margin-bottom: 1rem;
+}
+
+.mt {
+  margin-top: 1rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

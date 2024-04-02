@@ -29,7 +29,7 @@ const { levels } = useValuationsStore();
   <WelcomeItem>
     <template #heading>Simulador</template>
 
-    Seleccione el nivel para cada una de las valoraciones:
+    Seleccione el nivel de desempeño para cada una de las valoraciones:
     <LevelSimulator />
   </WelcomeItem>
 </template>

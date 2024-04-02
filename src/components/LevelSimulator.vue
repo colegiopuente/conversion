@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import { useValuationsStore } from '@/stores/valuations'
 
 const store = useValuationsStore()
@@ -26,16 +27,16 @@ const store = useValuationsStore()
     </tbody>
   </table>
 
-  <div>
-    <!-- <pre>Items: {{ items }}</pre>
-    <pre>Valid Items: {{ itemsCount }}</pre> -->
-  </div>
+  <!-- <div style="background-color: aliceblue;">
+    <pre>{{ store.validWeights }}</pre>
+    <pre>Promedio: {{ store.avgValuations }}</pre>
+  </div> -->
 
   <table class="total">
     <tbody>
       <tr>
         <td class="subtitle">Valoración Consolidada:</td>
-        <td>Superior</td>
+        <td>{{ store.totalValuation?.title }}</td>
       </tr>
       <tr>
         <td class="subtitle">Total valoraciones:</td>
@@ -58,14 +59,6 @@ const store = useValuationsStore()
 .subtitle {
   font-weight: 600;
   padding-right: 1rem;
-}
-
-.mb {
-  margin-bottom: 1rem;
-}
-
-.mt {
-  margin-top: 1rem;
 }
 
 .rating td {
