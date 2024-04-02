@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import { useValuationsStore } from '@/stores/valuations'
 
 const store = useValuationsStore()
@@ -52,7 +51,8 @@ const store = useValuationsStore()
   border-radius: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: aquamarine;
+  background-color: var(--color-background-primary);
+  color: var(--color-heading);
   margin-top: 1rem;
 }
 
@@ -63,6 +63,7 @@ const store = useValuationsStore()
 
 .rating td {
   padding-right: 2rem;
+  color: var(--color-heading);
 }
 
 .rating td:first-child {
