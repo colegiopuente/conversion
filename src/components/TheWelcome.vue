@@ -1,20 +1,22 @@
 <script setup>
 import LevelSimulator from './LevelSimulator.vue'
-import WelcomeItem from './WelcomeItem.vue'
+import AccordionItem from './AccordionItem.vue'
 import { useValuationsStore } from '@/stores/valuations'
 
 const { levels } = useValuationsStore();
 </script>
 
 <template>
-  <WelcomeItem>
+  <h2>Escala Nacional</h2>
+
+  <AccordionItem :open="true">
     <template #heading>Niveles de desempeño</template>
 
     <table class="table">
       <thead>
         <tr>
-          <th>Abbr.</th>
-          <th>Nivel (Escala Nacional).</th>
+          <th class="pr">Abbr.</th>
+          <th>Nivel</th>
         </tr>
       </thead>
       <tbody>
@@ -24,12 +26,14 @@ const { levels } = useValuationsStore();
         </tr>
       </tbody>
     </table>
-  </WelcomeItem>
+  </AccordionItem>
 
-  <WelcomeItem>
-    <template #heading>Simulador</template>
+  <h2>Simuladores</h2>
+
+  <AccordionItem :open="true">
+    <template #heading>Básico</template>
 
     Seleccione el nivel de desempeño para cada una de las valoraciones:
     <LevelSimulator />
-  </WelcomeItem>
+  </AccordionItem>
 </template>

@@ -38,6 +38,7 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 80px;
+  --mp-separator: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,4 +76,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+table {
+  border-spacing: 0;
 }

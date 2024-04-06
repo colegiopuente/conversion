@@ -1,10 +1,39 @@
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  open: {
+    type: Boolean,
+  }
+})
+
+const isOpen = ref(props.open)
+
+const toggleAccordion = () => {
+  isOpen.value = !isOpen.value
+}
+</script>
+
 <template>
   <div class="item">
     <div class="details">
-      <h3>
-        <slot name="heading"></slot>
+      <h3 @click="toggleAccordion">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </div>
+
+        <span>
+          <slot name="heading"></slot>
+        </span>
       </h3>
-      <slot></slot>
+      <div>
+        <div v-show="isOpen">
+          <slot></slot>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,10 +59,25 @@ i {
 }
 
 h3 {
+  display: flex;
+  align-items: center;
   font-size: 1.2rem;
-  font-weight: 500;
+  margin-left: -1.25rem;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
+  cursor: pointer;
+}
+
+h3 span {
+  font-weight: 500;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 @media (min-width: 1024px) {
