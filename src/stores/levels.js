@@ -29,7 +29,25 @@ export const useLevelsStore = defineStore('levels', () => {
     }
   ])
 
+  const calculatefromAbbr = (grades) => {
+    const weights = grades.map((item) => levels.value.find((i) => i.abbr == item)?.weight)
+    const average = weights.reduce((previous, current) => (current += previous)) / grades.length
+
+    if (!average || average < 1.0) {
+      return 'N/A'
+    } else if (average < 6.0) {
+      return levels.value[0].abbr
+    } else if (average < 8.0) {
+      return levels.value[1].abbr
+    } else if (average < 9.0) {
+      return levels.value[2].abbr
+    } else {
+      return levels.value[3].abbr
+    }
+  }
+
   return {
-    levels
+    levels,
+    calculatefromAbbr
   }
 })

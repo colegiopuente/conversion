@@ -8,7 +8,7 @@ const tableStore = useTableStore()
   <textarea v-model="tableStore.dataText" v-if="!tableStore.dataText"></textarea>
   <div>
     <div>
-      <button @click="tableStore.dataText = ''">Borrar selección</button>
+      <button @click="tableStore.dropSelection">Borrar selección</button>
     </div>
     <label for="hasHeader">
       <input id="hasHeader" type="checkbox" v-model="tableStore.hasHeader"> Mi tabla tiene encabezado (Primera fila)
@@ -47,6 +47,8 @@ const tableStore = useTableStore()
     </div>
     <pre># Columnas: {{ tableStore.validColumnsLength }}</pre>
     <pre>Columnas permitidas: {{ tableStore.allowedColumns }}</pre>
-    <pre>{{ tableStore.columns }}</pre>
+    <pre>A calcular: {{ tableStore.allowedCells }}</pre>
+    <pre>Total: {{ tableStore.totalValuation }}</pre>
+    <!-- <pre>Filas: {{ tableStore.columns }}</pre> -->
   </div>
 </template>
