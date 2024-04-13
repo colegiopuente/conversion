@@ -19,6 +19,19 @@ a,
   transition: 0.4s;
 }
 
+.scroll-x {
+  overflow-x: auto;
+  overflow: hidden;
+}
+
+.alice {
+  background-color: var(--table-background);
+}
+
+.table .grades {
+  min-width: 50%;
+}
+
 .table th {
   font-weight: bolder;
   border-bottom: 2px solid rgb(35, 156, 102);

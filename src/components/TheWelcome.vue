@@ -2,6 +2,7 @@
 import LevelSimulator from './LevelSimulator.vue'
 import AccordionItem from './AccordionItem.vue'
 import { useValuationsStore } from '@/stores/valuations'
+import TableSimulator from './TableSimulator.vue';
 
 const { levels } = useValuationsStore();
 </script>
@@ -35,5 +36,16 @@ const { levels } = useValuationsStore();
 
     Seleccione el nivel de desempeño para cada una de las valoraciones:
     <LevelSimulator />
+  </AccordionItem>
+
+  <AccordionItem>
+    <template #heading>Masivo (Experimental)</template>
+
+    <h3>Instrucciones</h3>
+    <ul>
+      <li>Seleccione y copie la región en el excel que contiene las notas, incluidos encabezados</li>
+      <li>Péguelas en el cuadro de abajo</li>
+    </ul>
+    <TableSimulator />
   </AccordionItem>
 </template>
