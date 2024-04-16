@@ -71,6 +71,10 @@ a,
   padding-left: var(--mp-separator);
 }
 
+.pr {
+  padding-right: calc(2 * var(--mp-separator));
+}
+
 .bold {
   font-weight: 600;
 }
