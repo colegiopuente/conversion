@@ -46,6 +46,16 @@ export const useTableStore = defineStore('table', () => {
     }
   }
 
+  const validationErrorsMessages = computed(() => {
+    if (allowedColumns.value.length < 1) {
+      return 'Seleccione algunas columnas que contengan valoraciones válidas.'
+    } else if (totalValuation.value?.includes('N/A')) {
+      return 'Seleccione solamente columnas con valoraciones válidas.'
+    }
+
+    return ''
+  })
+
   // watch(rows, (newRows, oldRows) => {
   //   for (let cont = 0; cont < validColumnsLength.value; cont++) allowedColumns.value.push(cont)
   // })
@@ -61,6 +71,7 @@ export const useTableStore = defineStore('table', () => {
     totalValuation,
     dropSelection,
     copyResult,
-    copyMessage
+    copyMessage,
+    validationErrorsMessages
   }
 })

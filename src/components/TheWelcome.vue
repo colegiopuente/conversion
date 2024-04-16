@@ -45,7 +45,7 @@ const { levels } = useValuationsStore();
     <ul>
       <li>Seleccione y copie la región en el excel que contiene las notas, incluida máximo una fila de encabezado (o
         ninguna, en cuyo caso deseleccione la opción de <b class="bold">Mi tabla tiene un encabezado</b>).</li>
-      <li>Péguelas en el cuadro de abajo</li>
+      <li>Péguelas en el cuadro de abajo (<b class="bold">Pegar selección</b>)</li>
       <li><b class="bold">Importante:</b> Seleccione las casillas de las columnas de las notas que serán incluidas en el
         cálculo.</li>
       <li>Copie la columna total en el excel cuidando que no quede desfasado.</li>

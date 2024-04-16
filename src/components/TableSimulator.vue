@@ -10,8 +10,11 @@ const tableStore = useTableStore()
     <textarea v-model="tableStore.dataText"></textarea>
   </div>
   <div>
-    <div>
+    <div class="mb">
       <button @click="tableStore.dropSelection">Borrar selección</button>
+    </div>
+    <div v-if="tableStore.validationErrorsMessages && tableStore.dataText">
+      <p class="validation-message" v-text="tableStore.validationErrorsMessages"></p>
     </div>
     <div>
       <label for="hasHeader">
