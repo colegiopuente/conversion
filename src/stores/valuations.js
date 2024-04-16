@@ -1,33 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { useLevelsStore } from '@/stores/levels'
 
 export const useValuationsStore = defineStore('valuations', () => {
-  const levels = ref([
-    {
-      abbr: 'Bj',
-      title: 'Bajo',
-      value: '1',
-      weight: 3.5
-    },
-    {
-      abbr: 'Bs',
-      title: 'Básico',
-      value: '2',
-      weight: 7.0
-    },
-    {
-      abbr: 'A',
-      title: 'Alto',
-      value: '3',
-      weight: 8.5
-    },
-    {
-      abbr: 'S',
-      title: 'Superior',
-      value: '4',
-      weight: 9.5
-    }
-  ])
+  const levelsStore = useLevelsStore()
+  const levels = ref(levelsStore.levels)
 
   const items = ref([])
 

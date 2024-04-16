@@ -22,6 +22,9 @@
 
   --vt-c-background-light: rgb(127, 255, 212);
   --vt-c-background-dark: rgb(14, 101, 79);
+
+  --table-background-light: rgb(240, 248, 255);
+  --table-background-dark: rgb(15, 7, 0);
 }
 
 /* semantic color variables for this project */
@@ -39,6 +42,8 @@
 
   --section-gap: 80px;
   --mp-separator: 1rem;
+
+  --table-background: var(--table-background-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,6 +58,8 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+
+    --table-background: var(--table-background-dark);
   }
 }
 

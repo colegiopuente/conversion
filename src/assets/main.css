@@ -19,9 +19,43 @@ a,
   transition: 0.4s;
 }
 
+.flex {
+  display: flex;
+  align-items: end;
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow: hidden;
+}
+
+.alice {
+  background-color: var(--table-background);
+}
+
+.table .grades {
+  min-width: 50%;
+}
+
 .table th {
   font-weight: bolder;
   border-bottom: 2px solid rgb(35, 156, 102);
+  max-width: 7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table td {
+  max-width: 7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bg-c {
+  background-color: var(--color-background-primary);
+  color: var(--color-heading);
 }
 
 .mb {
@@ -32,12 +66,21 @@ a,
   margin-top: var(--mp-separator);
 }
 
-.pr {
-  padding-right: calc(2 * var(--mp-separator));
+.p {
+  padding-right: var(--mp-separator);
+  padding-left: var(--mp-separator);
 }
 
 .bold {
   font-weight: 600;
+}
+
+.validation-message {
+  color: red;
+  border: red solid 1px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
 }
 
 @media (hover: hover) {
