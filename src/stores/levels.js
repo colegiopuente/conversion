@@ -4,13 +4,13 @@ import { ref } from 'vue'
 export const useLevelsStore = defineStore('levels', () => {
   const levels = ref([
     {
-      abbr: 'Bj',
+      abbr: 'I',
       title: 'Bajo',
       value: '1',
       weight: 3.5
     },
     {
-      abbr: 'Bs',
+      abbr: 'B',
       title: 'Básico',
       value: '2',
       weight: 7.0
@@ -30,7 +30,10 @@ export const useLevelsStore = defineStore('levels', () => {
   ])
 
   const calculatefromAbbr = (grades) => {
-    const weights = grades.map((item) => levels.value.find((i) => i.abbr == item)?.weight)
+    const weights = grades.map(
+      (item) => levels.value.find((i) => i.abbr == item.trim().toUpperCase())?.weight
+    )
+    if (!weights?.length) return 'N/A'
     const average = weights.reduce((previous, current) => (current += previous)) / grades.length
 
     if (!average || average < 1.0) {

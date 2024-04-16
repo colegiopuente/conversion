@@ -26,9 +26,10 @@ const store = useValuationsStore()
     </tbody>
   </table>
 
-  <!-- <div style="background-color: aliceblue;">
+  <!-- <div class="alice">
     <pre>{{ store.validWeights }}</pre>
     <pre>Promedio: {{ store.avgValuations }}</pre>
+    <pre>Válidos: {{ store.validItems }}</pre>
   </div> -->
 
   <table class="total">

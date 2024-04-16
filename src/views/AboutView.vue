@@ -12,6 +12,6 @@
       </li>
       <li>Si agrega valoraciones de más se puede eliminar haciendo click en el botón respectivo.</li>
     </ul>
-    <p><i>Versión: 1.0.0-beta2</i></p>
+    <p><i>Versión: 1.0.0-beta3</i></p>
   </div>
 </template>

@@ -32,9 +32,23 @@ export const useTableStore = defineStore('table', () => {
     allowedCells.value.map((item) => levelsStore.calculatefromAbbr(item))
   )
 
-  watch(rows, (newRows, oldRows) => {
-    for (let cont = 0; cont < validColumnsLength.value; cont++) allowedColumns.value.push(cont)
-  })
+  const copyMessage = ref('Copiar resultado')
+
+  const copyResult = async () => {
+    try {
+      await navigator.clipboard.writeText(totalValuation.value.join('\n'))
+      copyMessage.value = '¡Copiado!'
+      setTimeout(() => {
+        copyMessage.value = 'Copiar resultado'
+      }, '2000')
+    } catch (error) {
+      alert.error('Error al copiar: ' + error)
+    }
+  }
+
+  // watch(rows, (newRows, oldRows) => {
+  //   for (let cont = 0; cont < validColumnsLength.value; cont++) allowedColumns.value.push(cont)
+  // })
 
   return {
     dataText,
@@ -45,6 +59,8 @@ export const useTableStore = defineStore('table', () => {
     allowedColumns,
     allowedCells,
     totalValuation,
-    dropSelection
+    dropSelection,
+    copyResult,
+    copyMessage
   }
 })
