@@ -7,7 +7,7 @@ export const useTableStore = defineStore('table', () => {
   // const levels = ref(levelsStore.levels)
 
   const dataText = ref('')
-  const hasHeader = ref(true)
+  const hasHeader = ref(false)
 
   const rows = computed(() => dataText.value.split('\n'))
   const validRows = computed(() => rows.value.filter((i) => i))
@@ -25,7 +25,7 @@ export const useTableStore = defineStore('table', () => {
   const dropSelection = () => {
     dataText.value = ''
     allowedColumns.value = []
-    hasHeader.value = true
+    hasHeader.value = false
   }
 
   const totalValuation = computed(() =>
