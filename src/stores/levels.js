@@ -4,13 +4,13 @@ import { ref } from 'vue'
 export const useLevelsStore = defineStore('levels', () => {
   const levels = ref([
     {
-      abbr: 'Bj',
+      abbr: 'BJ',
       title: 'Bajo',
       value: '1',
       weight: 3.5
     },
     {
-      abbr: 'Bs',
+      abbr: 'BS',
       title: 'Básico',
       value: '2',
       weight: 7.0

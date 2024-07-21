@@ -52,7 +52,7 @@ const { levels } = useValuationsStore();
     </ul>
     <h3>Precaución</h3>
     <ul>
-      <li>Use solo las abreviaturas definidas institucionalmente, que aparecen en la tabla niveles de desempeño (Bj, Bs,
+      <li>Use solo las abreviaturas definidas institucionalmente, que aparecen en la tabla niveles de desempeño (BJ, BS,
         A, S). Un resultado de <b class="bold">N/A</b> en el total significa que en alguna de las columnas se ingresaron
         valoraciones con abreviaturas no válidas.</li>
       <li>Evite copiar celdas combinadas ya que esto puede generar resultados inesperados.</li>
